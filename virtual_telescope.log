@@ -1,0 +1,124 @@
+Virtual Telescope
+
+Logbook:
+
+started: 4/11/1998  
+Work begins on the first version of the Next Generation Space Telescope (NGST)
+Visible Imager (VI) and Multi-Object Spectrograph (MOS) simulation software.
+This work was funded under two contracts. The first was through the National
+Research Council Canada (NRC) as an employee of the Herzberg Institute of
+Astrophysics (HIA). The idea was based on a suggestion of David Crampton of HIA
+that a simulation of spectroscopy be built to better understand the issues of
+multi-object spectroscopy from space. These would be background subtraction, 
+contamination of sources, crowding, etc. Similarily, at the suggestion of 
+Paul Hickson of the University of British Columbia (UBC) a simulation of an
+imager was built. The idea was to find the advantages of the better resolution
+at short wavelengths afforded by a separate imager than the near-infrared
+camera. This second contract was through UBC. Both were made via funding from
+the Canadian Space Agency (CSA).
+
+completed: 26/2/1999
+First version of NGST MOS is available.
+
+completed: 15/3/1999
+Now has a more realistic distribution of galaxies. It distributes them with a
+redshift dependent correlation length. The fainter galaxies are redistributed
+to higher redshift and fainter magnitudes in order to match an extrapolation of
+the HST data. There are now some galaxies with redshifts up to 20. The
+spectrograph now has an efficiency curve, although it is a flat 65% over 1 to 5
+microns. The galaxy radius is also output at the end of  the simulation.
+
+completed: 23/3/1999
+Survey mode is now implemented. Now, you can automatically take spectra of all
+galaxies of a certain magnitude by setting the flag magnitude. Instead of
+selecting an individual galaxy, use 'Multiplex Mode'. The program will output
+information about each spectrum taken. Note, the parameters for each spectra
+are the same and are based on the parameters that are set when you initiate
+survey mode.
+
+completed: 30/3/1999
+The artificial image now goes to magnitude 33 instead of 31. The simulation is
+also capable of resolutions up to R=10000. However, the galaxy template spectra
+are still grainy (R=2000) so this will need to be fixed. The change in PSF
+(diffraction limit) with wavelength is implemented. The simulation also outputs
+an image of the spectrum for a slit and fiber spectrograph in survey mode.
+
+completed: 5/4/1999
+The control panel has been updated so that all aspects of the code can be
+manipulated by the user. The cloned galaxies, now as faint as magnitude 34,
+are also given a random rotation before they are added to the field. New
+template spectra are used. They have a maximum resolution of R=20000 and have
+a large number of emission lines.
+
+completed: 18/6/1999
+The problem of incorrect pixel sampling has been corrected. Now, although the
+simulation always uses 40 X 40 pixel sections to perform calculations, it is
+always selecting a 27 X 27 (2 arcsec X 2 arcsec) section from the original 
+image. This is 0.075 arcsec/pixel resolution in the original HST NICMOS image,
+but the output is now 40 X 40 pixels (0.05 arcsec X 0.05 arcsec). The background
+model is no longer normalized to the NICMOS image and can be varied. The program
+now simulates four different slit arrangement options. It can perform a
+multiplexed observation using a slit mask such as a laser-cut mask or a
+micromachined mirror array, positioned fibers, "slit-bands", or micromachined
+shutters. Improvements to the virtual NIR camera have also been made. It now
+performs as though the spectrograph is wide open and the beam passes straight
+through. Previously, the beam was arriving in the camera via the grating. The
+photometry is now correct.
+
+completed: 28/6/1999
+The simulation now has a visible imager incorporated into it. It uses much the
+same code as for the infrared imager. The spectral information and PSF
+information is different however and is at very low spectral resolution. The
+pixel sampling is variable for both detectors.
+
+completed: 27/7/1999
+The simulation now has an image slicer mode. A 2.0 arcsec X 4.0 arcsec region is
+sliced by a user-specified number of slices. An analysis package for the visible
+and infrared imagers is also incorporated. Work ends on the first version of
+NGST VI/MOS. The results are available through various publications including
+the author's PhD thesis as well as reports submitted to the NRC, CSA, and the
+National Aeronautics and Space Administration (NASA).
+
+completed: 28/1/2000
+Work begins on a third contract. This is funded from HIA through John Hutchings.
+The goal is to study the parameter space of the VI using the software package
+and find optimal specifications. A few changes to the software will be made.
+Some are cosmetic, such as the display panels. The PSF generation routines will
+be improved to allow worse Strehl-ratios than are currently available.  
+
+completed: 2/2/2000
+Four full days spent on improving the interface. The final survey results now 
+have all of the important parameters listed. There is a zoom function on the
+main display panel. The user can simply hit zoom, click on the part of the
+screen with the left mouse button to zoom in, and then quit by clicking with
+the right mouse button. I don't plan on fixing the scaling on the display. All
+of the images are output to 'ngstvimos_results'. The user should open an
+SAOImage or an Ximtool to display these. This is much as it would be on a real
+observing run anyway.
+
+completed: 4/4/2000
+Four full days spent on solving the problem of the PSF being undefined if the
+mirror roughness is too great. This was a simple math problem. It took the
+exponetial of too large a number. Basically, it was roundoff error. This is
+solved by using the scattering method as before except now this PSF is smoothed
+one last time before the Strehl ratio is calculated. It makes some sense. Can
+be considered an error associated with the telescope optics. It is implemented
+as a Gaussian smoothing function but can be switched to a boxcar to increase
+program speed. It is controlled by the `optics error' slider in the Telescope
+display.
+
+completed: 14/4/2000
+Begin work on performing the DRM proposals in detail. Will compare directly
+the VI and MOS imager on galaxy and star fields. Took a day to test the 
+simulation on automated surveys of galaxies and stars. Also ran it to test a
+a WWW-code run of all galaxies down to magnitude 30. Took over two days and
+was only about half done. This was for 10 X 1000 second exposures at poor pixel
+sampling for both the VI and MOS. This seems to make it impossible to run the
+simulation in WWW mode to do this experiment. It will take too long and will
+have to be done in real-time mode.
+
+completed: 1/11/2000
+The simulation has been pared down in resolution and expanded in generality.
+It includes the choice of four pupils and the effects of the atmosphere on
+both PSF and throughput. The ground-based background is included. No other
+major changes have been made. This work took approximately 3 weeks.

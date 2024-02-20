@@ -1,0 +1,38 @@
+Virtual Telescope 
+
+Copy entire contents of:
+
+/net/polaris/u/steinb/virtual_telescope
+
+including the sub-directories and their contents to a directory with more than
+100 Mb free disk space.
+
+You will need IDL along with the astro-lib programs in order to run the code.
+
+Go to the directory and run IDL.
+
+>idl
+
+Compile as.
+
+>.run virtual_telescope.pro
+
+Then run it.
+
+>virtual_telescope
+
+The text-size is machine dependent. If the text on your display is too small
+contact the author on how to fix this.
+
+All questions and comments can be addressed to the author:
+
+Eric Steinbring
+Department of Astronomy and Astrophysics
+University of California at Santa Cruz
+Santa Cruz, CA, 95064
+Office: (831) 459-5804
+Fax: (831) 459-5717
+E-mail: steinb@ucolick.org
+WWW: www.ucolick.org/~steinb
+
+1 November 2000
