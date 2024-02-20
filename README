@@ -1,4 +1,6 @@
-Virtual Telescope 
+Virtual Telescope
+
+Download the tarfile called virtual_telescope.tar, and unpack it.  Running the code will generate any required sub-directories and populate them with subsequent files.
 
 Copy entire contents of:
 
